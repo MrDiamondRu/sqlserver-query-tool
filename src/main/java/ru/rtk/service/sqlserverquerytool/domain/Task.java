@@ -19,71 +19,130 @@ import java.sql.Date;
 @Getter
 @Table(name = "Task", schema = "dob", catalog = "MOP")
 public class Task {
+    /**
+     * идентификатор задачи
+     */
     @Basic
     @Column(name = "taskId")
     private int taskId;
+
+    /**
+     * идентификатор описания задачи
+     */
     @Basic
-    @Column(name = "jobDescriptionId")
+    @Column(name = "taskDescriptionId")
     private Integer taskDescriptionId;
+
+    /**
+     * Код типа задачи
+     */
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "cipher")
     private String cipher;
+
+    /**
+     * Полный номер задачи
+     */
     @Basic
     @Column(name = "arrangementCode")
     private String arrangementCode;
+
+    /**
+     * Номер документа к задаче
+     */
     @Basic
     @Column(name = "serialNumber")
     private String serialNumber;
+
+    /**
+     * Год задачи
+     */
     @Basic
     @Column(name = "year")
     private String year;
+
+    /**
+     * Идентификатор состояния задачи
+     */
     @Basic
     @Column(name = "state")
     private int state;
-    @Basic
-    @Column(name = "jack")
-    private Integer jack;
+
+    /**
+     * Дата удаления задачи
+     */
     @Basic
     @Column(name = "deleteDate")
     private Date deleteDate;
+
+    /**
+     * Дата создания задачи
+     */
     @Basic
     @Column(name = "createDate")
     private Date createDate;
+
+    /**
+     * Среда выполнения задачи
+     */
     @Basic
     @Column(name = "subsystem")
     private String subsystem;
+
+    /**
+     * Срок действия задачи
+     */
     @Basic
     @Column(name = "taskSrok")
     private Integer taskSrok;
+
+    /**
+     * Цель задачи
+     */
     @Basic
     @Column(name = "target")
     private String target;
+
+    /**
+     * Категория задачи
+     */
     @Basic
     @Column(name = "category")
     private String category;
+
+    /**
+     * Примечание к задаче
+     */
     @Basic
     @Column(name = "note")
     private String note;
+
+    /**
+     * Причина невыполнения задачи
+     */
     @Basic
     @Column(name = "failReason")
     private String failReason;
-    @Basic
-    @Column(name = "arrangementView")
-    private String arrangementView;
-    @Basic
-    @Column(name = "saveReason")
-    private String saveReason;
+
+    /**
+     * Срок хранения результата задачи
+     */
     @Basic
     @Column(name = "saveCountDay")
     private Integer saveCountDay;
+
+    /**
+     * Идентификатор пользователя создавшего задачу
+     */
     @Basic
     @Column(name = "creator")
     private Integer creator;
+
+    /**
+     * Дата постановки задачи
+     */
     @Basic
     @Column(name = "setOffDate")
     private Date setOffDate;
-    @Basic
-    @Column(name = "rowVer", columnDefinition = "timestamp")
-    private String rowVer;
 }
