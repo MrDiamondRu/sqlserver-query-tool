@@ -1,3 +1,24 @@
 spring:
   application:
     name: sqlserver-query-tool
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
+        dialect: org.hibernate.dialect.SQLServerDialect
+        time_zone: UTC
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+  datasource:
+    url: jdbc:sqlserver://192.168.0.100:1433;encrypt=false;databaseName=MOP
+    username: user
+    password: pass
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+# настройка работы сервиса
+server:
+  port: 8052
